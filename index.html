@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/css/styles.css">
+  <title>Grafito</title>
+</head>
+<body>
+  <main id="root">
+    <section class="menu-container">
+      <div class="menu-container__title">
+        <img src="./public/assets/img/grafito.png"/>
+        <h1>
+          Grafito
+        </h1>
+      </div>
+      <div class="menu-container__options">
+        <button data-option="V">Crear vértice</button>
+        <button data-option="E">Crear arista</button>
+      </div>
+    </section>
+    <div class="layout-container">
+      <canvas id="my-layout"></canvas>
+    </div>
+  </main>
+  <script src="./src/js/utils.js"></script>
+  <script src="./src/js/Graph.js"></script>
+  <script src="./src/js/Vertice.js"></script>
+  <script src="./src/js/Edge.js"></script>
+  <script src="./src/js/index.js"></script>
+</body>
+</html>
