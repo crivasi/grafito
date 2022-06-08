@@ -1,8 +1,10 @@
 class Edge {
-  constructor(vertice1, vertice2) {
+  constructor(vertice1, vertice2, weight = "", name = "") {
     this.id = generateId();
-    this.name = 'A';
+    this.name = name;
+    this.weight = weight;
     this.vertices = [vertice1, vertice2];
+    this.belongsShortPath = false;
   }
 
   setVertices = (vertice1, vertice2) => {
@@ -15,5 +17,13 @@ class Edge {
 
   setName = (name) => {
     this.name = name;
+  }
+
+  setBelongsShortPath = (belongs) => {
+    this.belongsShortPath = belongs;
+  }
+
+  getBelongsShortPath = () => {
+    return this.belongsShortPath;
   }
 }

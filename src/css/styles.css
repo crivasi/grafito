@@ -24,7 +24,7 @@ button {
 
 .menu-container {
   padding: 20px;
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 .menu-container__title {
@@ -41,12 +41,21 @@ button {
 .menu-container__options {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  justify-content: center;
+  gap: 14px;
   padding: 5px;
 }
 
-.menu-container__options button {
+.menu-container__options button:first-child {
+  padding: 12px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: 1px solid #e2e2e2;
+  margin: 10px 0;
+}
+
+button {
   background-color: #e6e6e6;
   font-weight: 600;
   border: 2px solid transparent;
@@ -55,9 +64,14 @@ button {
   cursor: pointer;
 }
 
-.menu-container__options button:active,
-.menu-container__options button.active {
+button:active,
+button.active {
   background-color: #ef801e;
+  color: #ffffff;
+}
+
+button.altern {
+  background-color: #2c395e;
   color: #ffffff;
 }
 
@@ -66,8 +80,67 @@ button {
   background-color: #e8e8e8;
 }
 
+.graph-data {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
 canvas {
   border-radius: 8px;
   background-color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+.showed {
+  display: block;
+}
+
+.modal-params {
+  position: absolute;
+  width: 400px;
+  color: white;
+  background-color: #282a30;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 5px #cbcbcb;
+}
+
+.modal-params > div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  gap: 7px;
+}
+
+.modal-params .modal-params__buttons {
+  margin-top: 1.5em;
+}
+
+.modal-params .modal-params__buttons button {
+  width: 100%;
+}
+
+.modal-params input, select {
+  border: 2px solid #363c50;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: inherit;
+  background-color: #363c50;
+  color: white;
+}
+
+.overlay {
+  background-color: white;
+  opacity: 0.9;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 

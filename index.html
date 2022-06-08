@@ -17,13 +17,69 @@
         </h1>
       </div>
       <div class="menu-container__options">
+        <button id="use-predefined" class="altern">Usar predefinido</button>
         <button data-option="V">Crear vértice</button>
         <button data-option="E">Crear arista</button>
+        <hr/>
+        <h4>Algoritmo:</h4>
+        <button data-option="shortestPath">Ruta más corta</button>
       </div>
     </section>
     <div class="layout-container">
+      <div class="graph-data">
+        <h3 id="my-graph-name"></h3>
+        <h5 id="my-graph-type"></h5>
+      </div>
       <canvas id="my-layout"></canvas>
     </div>
+    <div id="create-graph-modal" class="modal-params">
+      <h2>
+        Crea tu grafo
+      </h2>
+      <div>
+        <label>
+          Nombre:
+        </label>
+        <input name="graphName" type="text" value=""/>
+        <label>
+          Tipo:
+        </label>
+        <select name="graphType">
+          <option value="no-dirigido">
+            No dirigido
+          </option>
+          <option value="dirigido">
+            Dirigido
+          </option>
+        </select>
+        <div class="modal-params__buttons">
+          <button id="create-graph" class="active">
+            Crear
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="create-edge-modal" class="modal-params hidden">
+      <h2>
+        Parametriza tu arista
+      </h2>
+      <div>
+        <label>
+          Peso:
+        </label>
+        <input name="edgeWeight" type="text" value=""/>
+        <label>
+          Nombre:
+        </label>
+        <input name="edgeName" type="text" value=""/>
+        <div class="modal-params__buttons">
+          <button id="create-edge" class="active">
+            Crear
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="overlay"></div>
   </main>
   <script src="./src/js/utils.js"></script>
   <script src="./src/js/Graph.js"></script>

@@ -4,6 +4,7 @@ class Vertice {
     this.name = name;
     this.coordinates = {x, y};
     this.isSelected = false;
+    this.belongsShortPath = false;
   }
 
   changeName = (name) => {
@@ -34,4 +35,11 @@ class Vertice {
     return this.isSelected;
   }
 
+  setBelongsShortPath = (belongs) => {
+    this.belongsShortPath = belongs;
+  }
+
+  getBelongsShortPath = () => {
+    return this.belongsShortPath;
+  }
 }
