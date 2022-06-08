@@ -203,6 +203,8 @@ function drawVertice(vertice, withSelectedVertice) {
   canvasContext.fillText(vertice.id, x, y + 4);
 
   canvasContext.closePath();
+
+  vertice.setBelongsShortPath(false);
 }
 
 function storeAndDrawVertice(event) {
@@ -255,6 +257,8 @@ function drawEdge(edge) {
     canvasContext.font = "16px monospace";
     addLabelToEdge(edge, {x: pointX1, y: pointY1}, {x: pointX2, y: pointY2});
   }
+
+  edge.setBelongsShortPath(false);
 }
 
 function addLabelToEdge(edge, point1, point2) {
@@ -376,7 +380,7 @@ function calculateShortestPath(event) {
 
     shortestPath.forEach(() => {
       for (edge of graph.edges) {
-        edge.vertices.indexOf(nodesShortestPath[0].id) ;
+        edge.vertices.indexOf(nodesShortestPath[0].id);
       }
     });
 
