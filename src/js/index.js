@@ -165,6 +165,7 @@ createEdgeButton.addEventListener('click', () => {
   }
 
   createEdge(edgeWeight.value, edgeName.value);
+
   edgeWeight.value = "";
   edgeName.value = "";
 
@@ -253,10 +254,8 @@ function drawEdge(edge) {
   canvasContext.stroke();
   canvasContext.closePath();
 
-  if (edge.weight) {
-    canvasContext.font = "16px monospace";
-    addLabelToEdge(edge, {x: pointX1, y: pointY1}, {x: pointX2, y: pointY2});
-  }
+  canvasContext.font = "16px monospace";
+  addLabelToEdge(edge, {x: pointX1, y: pointY1}, {x: pointX2, y: pointY2});
 
   edge.setBelongsShortPath(false);
 }
@@ -308,7 +307,7 @@ function storeAndDrawEdge(event) {
 }
 
 function createEdge(weight, name) {
-  const edge = new Edge(currentEdge[0], currentEdge[1], parseInt(weight), name);
+  const edge = new Edge(currentEdge[0], currentEdge[1], parseInt(weight));
 
   graph.addEdge(edge);
   currentEdge = [];

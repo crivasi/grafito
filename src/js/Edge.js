@@ -2,7 +2,7 @@ class Edge {
   constructor(vertice1, vertice2, weight = "", name = "") {
     this.id = generateId();
     this.name = name;
-    this.weight = weight;
+    this.weight = isNaN(weight) ? 0 : weight;
     this.vertices = [vertice1, vertice2];
     this.belongsShortPath = false;
   }
